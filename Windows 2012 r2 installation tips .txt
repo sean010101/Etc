@@ -24,7 +24,8 @@ Install-WindowsFeature Server-Gui-Shell, Server-Gui-Mgmt-Infra -Source wim:d:\so
 ### Switch Core>Full if install files aren't cached
 Install-WindowsFeature User-Interfaces-Infra -Source wim:d:\sources\install.wim:2 -restart
 
-
+### RSAT on non-domain, run locally
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value "ServerName" –Force
 
 ### Hyper-V enhanced settings are saved here:
 ### %APPDATA%\Microsoft\Windows\Hyper-V\Client\1.0
