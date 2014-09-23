@@ -10,7 +10,7 @@ Get-WindowsFeature | Where-Object -FilterScript {$_.installstate -eq 'available'
 Get-WindowsFeature | Where-Object -FilterScript {$_.installed -eq $false} | Uninstall-WindowsFeature -Remove
 
 ### Switch Full>Core 
-Remove-WindowsFeature Server-Gui-Shell,Server-Gui-Mgmt-Infra
+Remove-WindowsFeature Server-Gui-Shell,Server-Gui-Mgmt-Infra -restart
 
 ### What Windows edition is running
 Get-WindowsEdition -Online
@@ -18,11 +18,13 @@ Get-WindowsEdition -Online
 ### What Windows editions are in this media
 Get-WindowsImage -ImagePath d:\sources\install.wim
 
-### Switch to Core>Full 
-Install-WindowsFeature Server-Gui-Shell, Server-Gui-Mgmt-Infra -Source wim:d:\sources\install.wim:4
+### Switch Core>Full 
+Install-WindowsFeature Server-Gui-Shell, Server-Gui-Mgmt-Infra -Source wim:d:\sources\install.wim:2 -restart
+
+### Switch Core>Full if install files aren't cached
+Install-WindowsFeature User-Interfaces-Infra -Source wim:d:\sources\install.wim:2 -restart
 
 
-Install-WindowsFeature server-gui-mgmt-infra -source:wim:d:\sources\install.wim:4 -Restart:$false
 
 ### Hyper-V enhanced settings are saved here:
 ### %APPDATA%\Microsoft\Windows\Hyper-V\Client\1.0
