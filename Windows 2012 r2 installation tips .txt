@@ -27,7 +27,7 @@ Install-WindowsFeature User-Interfaces-Infra -Source wim:d:\sources\install.wim:
 ### RSAT on non-domain, run locally
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value "ServerName" –Force
 
-### Enable remote management
+### Enable remote management, firewall rules
 Enable-NetFirewallRule -DisplayGroup "Remote Administration"
 "Remote Event Log Management"
 "Remote Service Management"
