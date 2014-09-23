@@ -3,15 +3,14 @@
 ### Whats installed
 Get-WindowsFeature | Where-Object -FilterScript {$_.installed -eq $true}
 
-### Features on demand, remove install files not in use
-Get-WindowsFeature | Where-Object -FilterScript {$_.installed -eq $false} | Uninstall-WindowsFeature -Remove
-
 ### Features on demand, what is available but not installed
 Get-WindowsFeature | Where-Object -FilterScript {$_.installstate -eq 'available'}
 
+### Features on demand, remove install files not in use
+Get-WindowsFeature | Where-Object -FilterScript {$_.installed -eq $false} | Uninstall-WindowsFeature -Remove
+
 ### Switch to Core install
 Remove-WindowsFeature Server-Gui-Shell,Server-Gui-Mgmt-Infra
-
 
 ### Hyper-V enhanced settings are saved here:
 ### %APPDATA%\Microsoft\Windows\Hyper-V\Client\1.0
