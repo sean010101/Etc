@@ -9,5 +9,5 @@ Get-WindowsFeature | Where-Object -FilterScript {$_.installed -eq $false} | Unin
 
 
 
-### Hyper-V enchanced settings are saved here:
+### Hyper-V enhanced settings are saved here:
 ### %APPDATA%\Microsoft\Windows\Hyper-V\Client\1.0
