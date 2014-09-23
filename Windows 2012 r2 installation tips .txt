@@ -1,0 +1,8 @@
+### Windows 2012 r2 installation tips
+
+### Whats installed
+Get-WindowsFeature | Where-Object -FilterScript {$_.installed -eq $true}
+
+### Features on demand, remove install files not in use
+Get-WindowsFeature | Where-Object -FilterScript {$_.installed -eq $false} | Uninstall-WindowsFeature -Remove
+
