@@ -1,3 +1,5 @@
+### THIS DOESN'T WORK
+
 ### EqualLogic Powershell - Set existing snapshots offline for all volumes, create new snapshots on all volumes
 
 ### Connect to EqualLogic
