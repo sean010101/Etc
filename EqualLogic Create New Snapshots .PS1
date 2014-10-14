@@ -1,4 +1,4 @@
-### EqualLogic Powershell - Set existing snapshots offline for all volumes, create new read-only snapshots on all volumes
+### EqualLogic Powershell - Set existing snapshots offline for all volumes, create new snapshots on all volumes
 
 ### Disconnect all ISCSI connections
 Get-IscsiTarget | Disconnect-IscsiTarget -Confirm:$false
