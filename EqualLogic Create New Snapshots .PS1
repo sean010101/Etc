@@ -14,7 +14,7 @@ get-IscsiTarget |FT isconnected,nodeaddress -AutoSize
 start-sleep -s 10
 Update-IscsiTarget
 ### Connect to new Snapshots
-Get-IscsiTarget | connect-IscsiTarget
+Get-IscsiTarget | Connect-IscsiTarget -IsMultipathEnabled:$true
 get-IscsiTarget |FT isconnected,nodeaddress -AutoSize
 ### Rescan disks
 start-sleep -s 10
