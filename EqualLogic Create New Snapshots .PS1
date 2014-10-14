@@ -15,6 +15,7 @@ Update-IscsiTarget
 Get-IscsiTarget | connect-IscsiTarget
 get-IscsiTarget |FT isconnected,nodeaddress -AutoSize
 ### Rescan disks
+start-sleep -s 10
 Update-HostStorageCache
 ### Set all disks to online
 get-disk | Set-Disk -IsOffline $False
