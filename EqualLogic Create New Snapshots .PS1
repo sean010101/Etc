@@ -7,11 +7,14 @@ Get-EqlVolume | Get-EqlSnapshot | Set-EqlSnapshot -OnlineStatus offline
 ### Create new Snapshots
 Get-EqlVolume | New-EqlSnapshot -OnlineStatus online -AccessType read_only
 Disconnect-EqlGroup
+get-IscsiTarget |FT isconnected,nodeaddress -AutoSize
 ### Enumerate the new Snapshots
+start-sleep -s 10
 Update-IscsiTarget
 ### Connect to new Snapshots
-Get-IscsiTarget | connect-IscsiTarget -verbose
+Get-IscsiTarget | connect-IscsiTarget
+get-IscsiTarget |FT isconnected,nodeaddress -AutoSize
+### Rescan disks
+Update-HostStorageCache
 ### Set all disks to online
-get-disk | Set-Disk -IsOffline $False -verbose
-### List
-Get-IscsiTarget | FT
+get-disk | Set-Disk -IsOffline $False
