@@ -8,6 +8,9 @@ Disconnect-EqlGroup
 ### This is needed but fails
 ### Update-IscsiTarget
 
+### Test this
+Get-IscsiTargetPortal | Update-IscsiTargetPortal
+
 Get-IscsiTarget | Connect-IscsiTarget -IsMultipathEnabled:$true
 start-sleep -s 10
 get-disk | Set-Disk -IsOffline $False
