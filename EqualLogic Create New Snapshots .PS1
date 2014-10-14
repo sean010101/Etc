@@ -7,6 +7,8 @@ Get-EqlVolume | Get-EqlSnapshot | Set-EqlSnapshot -OnlineStatus offline
 ### Create new Snapshots
 Get-EqlVolume | New-EqlSnapshot -OnlineStatus online -AccessType read_only
 Disconnect-EqlGroup
+### Enumerate the new Snapshots
+Update-IscsiTarget
 ### Connect to new Snapshots
 Get-IscsiTarget | connect-IscsiTarget -verbose
 ### Set all disks to online
