@@ -1,4 +1,4 @@
-### EqualLogic Powershell - Set existing snapshots offline for all volumes, create new snapshots on all volumes
+### EqualLogic Powershell - Set existing snapshots offline for all volumes, create new snapshots on all volumes, mounts them as online
 
 Connect-EqlGroup -GroupAddress 0.0.0.0 -Credential (Get-Credential -Credential USERNAME)
 Get-EqlVolume | Get-EqlSnapshot | Set-EqlSnapshot -OnlineStatus offline
