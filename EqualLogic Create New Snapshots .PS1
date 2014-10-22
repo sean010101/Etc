@@ -5,10 +5,6 @@ Get-EqlVolume | Get-EqlSnapshot | Set-EqlSnapshot -OnlineStatus offline
 Get-EqlVolume | New-EqlSnapshot -OnlineStatus online -AccessType read_only
 Disconnect-EqlGroup
 
-### This is needed but fails
-### Update-IscsiTarget
-
-### Test this
 Get-IscsiTargetPortal | Update-IscsiTargetPortal
 
 Get-IscsiTarget | Connect-IscsiTarget -IsMultipathEnabled:$true
