@@ -1,0 +1,5 @@
+### Get Disabled Services, Set to Auto, Start 
+Get-WmiObject Win32_Service | Where-Object {$_.StartMode -eq 'Disabled'} | Set-Service -StartMode Automatic -Status Running
+
+### Get Services that are Stopped
+get-service | Where-Object {$_.Status -eq 'Stopped'}
