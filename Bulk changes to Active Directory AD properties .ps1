@@ -8,5 +8,5 @@ $userList = Import-Csv 'C:\UserProperties.CSV'
 foreach ($user in $userList){
    Set-ADUser -Identity $user.Identity -Title $user.Title -Department $user.Department
    ### Line below is for confirmation feedback, optional
-   Get-ADUser -Identity $user.Identity -Properties Title,Department | ft name,Title,Department
+   Get-ADUser -Identity $user.Identity -Properties Title,Department | ft Name,Title,Department
 }
