@@ -1,0 +1,7 @@
+### Commands to Create a Shadow Copy, Mount, Copy it away, then delete the Shadow Copy
+
+vssadmin create shadow /for=H:
+vssadmin list shadows
+mklink /d H:\ShadowCopy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopyX\
+robocopy H:\ShadowCopy\SMB3 \\server\Backup\ /mir /eta /copyall /w:0 /r:0
+vssadmin delete shadows /for=H: /all
