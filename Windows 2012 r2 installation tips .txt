@@ -27,7 +27,7 @@ Install-WindowsFeature User-Interfaces-Infra -Source wim:d:\sources\install.wim:
 ### RSAT on non-domain, run locally
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value "ServerName" –Force
 
-### Enable remote management, firewall rules, Optional
+### Optional, Enable remote management firewall rules
 Enable-NetFirewallRule -DisplayGroup "Remote Event Log Management"
   "Remote Service Management"
   "File and Printer Sharing"
@@ -35,6 +35,7 @@ Enable-NetFirewallRule -DisplayGroup "Remote Event Log Management"
   "Remote Volume Management"
   "Windows Firewall Remote Management"
 
+### WinRM doesn't seem to be necessary anymore 
 WinRM quickconfig
 
 ### Hyper-V enhanced settings are saved here:
