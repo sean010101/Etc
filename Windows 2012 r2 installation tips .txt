@@ -40,3 +40,7 @@ WinRM quickconfig
 
 ### Hyper-V enhanced settings are saved here:
 ### %APPDATA%\Microsoft\Windows\Hyper-V\Client\1.0
+
+
+dcdiag /v /c /d /e
+
