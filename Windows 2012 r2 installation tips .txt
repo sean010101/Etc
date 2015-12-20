@@ -44,3 +44,6 @@ WinRM quickconfig
 
 dcdiag /v /c /d /e
 
+Repadmin /syncall
+Repadmin /replsummary
+Repadmin /showrepl
